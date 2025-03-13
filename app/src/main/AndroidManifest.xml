@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LabourCinnect1"
+        tools:targetApi="31">
+        <activity
+            android:name=".btnlanguagechange"
+            android:exported="false" />
+        <activity
+            android:name=".labourlaws"
+            android:exported="false" />
+        <activity
+            android:name=".Painter"
+            android:exported="false" />
+        <activity
+            android:name=".Loading_Unloading"
+            android:exported="false" />
+        <activity
+            android:name=".Carpentering"
+            android:exported="false" />
+        <activity
+            android:name=".Electrician"
+            android:exported="false" />
+        <activity
+            android:name=".Plumbing"
+            android:exported="false" />
+        <activity
+            android:name=".MemberDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Constructionlabour"
+            android:exported="false" />
+        <activity
+            android:name=".profile"
+            android:exported="false" />
+        <activity
+            android:name=".feedback"
+            android:exported="false" />
+        <activity
+            android:name=".drawer_toolbar"
+            android:exported="false" />
+        <activity
+            android:name=".about_us"
+            android:exported="false" />
+        <activity
+            android:name=".ContractorHomepage"
+            android:exported="false" />
+        <activity
+            android:name=".LabourHomepage"
+            android:exported="false" /> <!-- SplashActivity as the launcher activity -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".labcon"
+            android:exported="true" /> <!-- Other Activities that can be opened from LabConActivity -->
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity" />
+    </application>
+
+</manifest>

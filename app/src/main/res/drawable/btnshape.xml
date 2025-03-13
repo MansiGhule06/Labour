@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+</selector>-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Set the brown color as the background of the EditText -->
+    <solid android:color="#5C4033" /> <!-- Example: SaddleBrown -->
+
+    <!-- Optional: Set the border color and width -->
+    <stroke
+        android:width="2dp"
+        android:color="#5D4037" /> <!-- Optional: A darker shade of brown for the border -->
+
+    <!-- Define corner radius to create an oval shape -->
+    <corners android:radius="50dp" /> <!-- Adjust radius for desired roundness -->
+
+    <!-- Add padding to the shape content -->
+    <padding
+        android:left="10dp"
+        android:right="10dp"
+        android:top="10dp"
+        android:bottom="10dp" />
+</shape>

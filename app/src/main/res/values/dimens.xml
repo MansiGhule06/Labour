@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="_14sdp">18.20dp</dimen>
+    <dimen name="_10sdp" />
+    <dimen name="_6sdp">7.80dp</dimen>
+    <item name="_8sdp" format="float" type="dimen">10.40</item>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="card_width">120dp</dimen>
+    <dimen name="card_height">120dp</dimen>
+
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/aboutus"
+        android:title="@string/about_us"
+        android:icon="@drawable/profile_icon"
+        />
+    <item
+        android:id="@+id/nav_contacts1"
+        android:title="@string/contacts"
+        android:icon="@drawable/phone_call_icon" />
+    <item
+        android:id="@+id/labour_laws"
+        android:title="@string/laws_for_labour"
+        android:icon="@drawable/location_icon" />
+
+
+
+
+    <item android:title="@string/select_language"
+        android:id="@+id/select_lang">
+        <menu>
+            <item
+                android:id="@+id/english"
+                android:title="@string/english" />
+
+
+
+            <item
+                android:id="@+id/marathi"
+                android:title="@string/marathi" />
+        </menu>
+    </item>
+    <!-- Section 2 -->
+    <item android:title="@string/settings" >
+        <menu>
+            <item
+                android:id="@+id/nav_Admin"
+                android:title="@string/admin_login"
+                android:icon="@drawable/admin_logo"/>
+
+
+
+            <item
+                android:id="@+id/nav_logout"
+                android:title="@string/logout"
+                android:icon="@drawable/logout_icon" />
+        </menu>
+    </item>
+
+    <!-- Section 3 -->
+    <item android:title="@string/share">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:title="@string/share"
+                android:icon="@drawable/share_icon" />
+
+        </menu>
+    </item>
+
+</menu>

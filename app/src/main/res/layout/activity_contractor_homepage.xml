@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- Main content layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background1">
+
+        <!-- Toolbar -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/labtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:background="@drawable/background1">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/background1"
+            android:elevation="45dp"
+            app:titleTextColor="@color/brown"
+            android:theme="@style/labourConnectstyle">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:src="@drawable/f1"
+                android:id="@+id/btndrawer1"
+                app:contentInsetStart="0dp"
+                app:contentInsetLeft="0dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/labourconnect_contractor"
+                android:id="@+id/lb"
+                android:textColor="@color/brown"
+                android:textSize="20dp" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+        <TextView
+            android:id="@+id/locationTextView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labtoolbar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/roundedtext"
+            android:drawableStart="@drawable/left_location_icon"
+            android:drawablePadding="@dimen/_14sdp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:padding="10.40dp"
+            android:textSize="@dimen/_10sdp" />
+        <!-- Your existing content here -->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/locationTextView3"
+            android:background="@drawable/background1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/recCard1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="102dp"
+                    android:padding="18.20dp"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="1dp"
+                    app:cardUseCompatPadding="true">
+
+                    <com.denzcoskun.imageslider.ImageSlider
+                        android:id="@+id/image_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:background="@drawable/background1"
+                        app:iss_auto_cycle="true"
+                        app:iss_delay="1000"
+                        app:iss_period="1000"
+                        app:iss_text_align="CENTER" />
+                </androidx.cardview.widget.CardView>
+
+                <GridLayout
+                    android:id="@+id/grid_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/recCard1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="20.80dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="20.80dp"
+                    android:columnCount="2"
+                    android:rowCount="3">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/first_Aid"
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_margin="16dp"
+                        android:clickable="true"
+                        android:src="@drawable/construction_worker"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Background image -->
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/construct"
+                                android:background="@null"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:src="@drawable/construction_worker"
+                                android:alpha="0.30"/>
+
+                            <!-- Foreground content (TextView/ImageView) -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_bold"
+                                    android:text="@string/construction_workers"
+                                    android:textAlignment="center"
+                                    android:textSize="15dp"
+                                    android:textColor="@color/brown"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/plumber1"
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:layout_margin="16dp"
+                        android:clickable="true"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Background image -->
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:adjustViewBounds="true"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:id="@+id/plumber"
+                                android:src="@drawable/plumber_worker"
+                                android:alpha="0.38"/>
+
+                            <!-- Foreground content (TextView/ImageView) -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_bold"
+                                    android:text="@string/plumbers"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/brown"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/electrician"
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="16dp"
+                        android:clickable="true"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Background image -->
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:id="@+id/electric"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:src="@drawable/electrician_worker"
+                                android:alpha="0.38"/>
+
+                            <!-- Foreground content (TextView/ImageView) -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_bold"
+                                    android:text="@string/electricians"
+                                    android:textAlignment="center"
+                                    android:textSize="15dp"
+                                    android:textColor="@color/brown"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/carpenter1"
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="16dp"
+                        android:clickable="true"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Background image -->
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/carpenter"
+                                android:src="@drawable/carpenter"
+                                android:background="@null"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:alpha="0.38"/>
+
+                            <!-- Foreground content (TextView/ImageView) -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_bold"
+                                    android:text="@string/carpenters"
+                                    android:textAlignment="center"
+                                    android:textSize="15dp"
+                                    android:textColor="@color/brown"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/loading_worker"
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="16dp"
+                        android:clickable="true"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Background image -->
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/load_unload"
+                                android:scaleType="centerCrop"
+                                android:background="@null"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:src="@drawable/loadig_and_unloadig"
+                                android:alpha="0.38"/>
+
+                            <!-- Foreground content (TextView/ImageView) -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_bold"
+                                    android:text="@string/loading_and_unloading_worker"
+                                    android:textAlignment="center"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/brown"
+                                    />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="16dp"
+                        android:clickable="true"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Background image -->
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/painter"
+                                android:scaleType="centerCrop"
+                                android:background="@null"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:src="@drawable/painter_worker"
+                                android:alpha="0.38"/>
+
+                            <!-- Foreground content (TextView/ImageView) -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_bold"
+                                    android:text="@string/painters"
+                                    android:textColor="@color/brown"
+                                    android:textAlignment="center"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </GridLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+    <!-- Side navigation drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/background1"
+        android:layout_gravity="start"
+        app:itemTextColor="@color/black"
+        app:itemTextAppearance="@style/NavigationItemTextStyle"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer_items" />
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
