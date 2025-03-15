@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -17,6 +18,7 @@ import java.util.Locale;
 public class Painter extends AppCompatActivity {
     ListView listview;
     custom adapter;
+    Button btn;
     Intent intent;
 
     String[] larray={"XYZ","ABC","QWER","UIOP"};
@@ -49,11 +51,11 @@ public class Painter extends AppCompatActivity {
                 getString(R.string.prapti_is_a_backend_developer_focused_on_java_and_databases)
         };
         if (info.equals("contractor")) {
-            adapter=new custom(this,carray,cimgarr);
+            adapter=new custom(this,carray,cimgarr, btn);
         }
         else if(info.equals("labour"))
         {
-            adapter=new custom(this,larray,limgarr);
+            adapter=new custom(this,larray,limgarr, btn);
         }
         listview.setAdapter(adapter);
 

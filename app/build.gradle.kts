@@ -50,4 +50,7 @@ dependencies {
     implementation("com.google.firebase:firebase-database:21.0.0")
     implementation("com.google.firebase:firebase-storage:20.2.1")
 
+    implementation ("com.google.android.material:material:1.6.0")
+
+
 }

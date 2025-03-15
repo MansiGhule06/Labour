@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -11,7 +12,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -22,7 +22,7 @@ public class feedback extends AppCompatActivity {
     private TextInputEditText userNameInput, feedbackInput;
     private RadioGroup recommendationGroup;
     private MaterialCheckBox checkBoxQuality, checkBoxResponse, checkBoxInterface, checkBoxCommunication, checkBoxPricing;
-    private MaterialButton submitButton;
+    private Button submitButton;
     private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

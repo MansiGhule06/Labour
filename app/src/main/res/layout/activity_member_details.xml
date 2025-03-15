@@ -9,7 +9,7 @@ android:background="@drawable/background1">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background1"
+    android:background="#ffff"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -34,7 +34,7 @@ android:background="@drawable/background1">
         android:id="@+id/actv"
         android:layout_gravity="center"
         android:hint="@string/labour_information"
-        android:background="#782626"
+        android:background="#3100E676"
         android:layout_marginTop="20dp"
         android:paddingTop="5dp"
         android:gravity="center"
@@ -73,7 +73,7 @@ android:background="@drawable/background1">
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:background="#8B4513"
+        android:background="@drawable/button_square"
         android:padding="10dp"
         android:text="Call"
         android:textSize="18sp"

@@ -6,12 +6,12 @@
     android:shape="rectangle">
 
     <!-- Set the brown color as the background of the EditText -->
-    <solid android:color="#5C4033" /> <!-- Example: SaddleBrown -->
+    <solid android:color="#95B9F6CA" /> <!-- Example: SaddleBrown -->
 
     <!-- Optional: Set the border color and width -->
     <stroke
         android:width="2dp"
-        android:color="#5D4037" /> <!-- Optional: A darker shade of brown for the border -->
+        android:color="#06E645" /> <!-- Optional: A darker shade of brown for the border -->
 
     <!-- Define corner radius to create an oval shape -->
     <corners android:radius="50dp" /> <!-- Adjust radius for desired roundness -->

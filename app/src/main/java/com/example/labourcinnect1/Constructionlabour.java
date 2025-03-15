@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -16,6 +17,8 @@ import java.util.Locale;
 
 public class Constructionlabour extends AppCompatActivity {
     ListView listview;
+
+    Button btn;
     Intent intent1;
     String[] larray={"Tanaya","Disha","Mansi","Prapti"};
     custom adapter;
@@ -36,6 +39,7 @@ public class Constructionlabour extends AppCompatActivity {
         listview=findViewById(R.id.list);
         back = findViewById(R.id.ib);  // ✅ Correct initialization
         ldetails = new String[]{
+
                 getString(R.string.tanaya_is_a_software_engineer_with_expertise_in_android_development),
                 getString(R.string.disha_is_a_data_scientist_specializing_in_ai_and_machine_learning),
                 getString(R.string.mansi_is_a_ui_ux_designer_with_a_passion_for_creative_designs),
@@ -49,11 +53,11 @@ public class Constructionlabour extends AppCompatActivity {
         };
         info=getIntent().getStringExtra("user_type");
         if (info.equals("contractor")) {
-            adapter=new custom(this,carray,cimgarr);
+            adapter=new custom(this,carray,cimgarr,btn);
         }
         else if(info.equals("labour"))
         {
-            adapter=new custom(this,larray,limgarr);
+            adapter=new custom(this,larray,limgarr,btn);
         }
         listview.setAdapter(adapter);
 
@@ -62,7 +66,7 @@ public class Constructionlabour extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (info.equals("contractor")) {
-                     intent1=new Intent(Constructionlabour.this,Constructionlabour.class);
+                     intent1=new Intent(Constructionlabour.this,ContractorHomepage.class);
                 }
                 else if(info.equals("labour"))
                 {

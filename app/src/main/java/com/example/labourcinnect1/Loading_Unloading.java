@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -17,6 +18,7 @@ import java.util.Locale;
 public class Loading_Unloading extends AppCompatActivity {
 
     ListView listview;
+    Button btn;
     ImageButton back;
     custom adapter;
     Intent intent;
@@ -48,11 +50,11 @@ public class Loading_Unloading extends AppCompatActivity {
         };
         info=getIntent().getStringExtra("user_type");
         if (info.equals("contractor")) {
-            adapter=new custom(this,carray,cimgarr);
+            adapter=new custom(this,carray,cimgarr, btn);
         }
         else if(info.equals("labour"))
         {
-            adapter=new custom(this,larray,limgarr);
+            adapter=new custom(this,larray,limgarr, btn);
         }
         listview.setAdapter(adapter);
         back=findViewById(R.id.ib);

@@ -2,55 +2,73 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2B2D30"
+    android:backgroundTint="@color/white"
+    android:foregroundTint="#00E676"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="20dp"
-    android:background="@drawable/background">
+    android:padding="20dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        android:gravity="center"
-        android:text="@string/who_are_you"
-        android:textColor="#7C1616"
-        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:fontFamily="cursive"
+        android:foregroundTint="#11231A"
+        android:text="LabourConnect"
+        android:textColor="#2B2D30"
         android:textSize="50dp"
-        />
+        android:textStyle="bold"></TextView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:text="Find Work get Connected"
+        android:textColor="#429E9D"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="140dp"
         android:padding="26dp">
 
         <!-- Left (Brown) Button -->
         <!-- Right (Red) Button -->
-        <ImageButton
+       <ImageButton
             android:id="@+id/leftButton"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
             android:layout_marginStart="10dp"
-            android:background="@drawable/button_square"
+            android:backgroundTint="#3100E676"
             android:clipToOutline="true"
-            android:elevation="4dp"
+            android:elevation="1dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/cont" /> <!-- Add margin to separate buttons -->
+            android:src="@drawable/contractorlogo"
+            android:textAlignment="center" /> <!-- Add margin to separate buttons -->
+
 
         <Space
             android:layout_width="20dp"
-            android:layout_height="0dp"/>
+            android:layout_height="0dp" />
 
         <ImageButton
 
             android:id="@+id/rightButton"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/button_square"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:backgroundTint="#3100E676"
             android:clipToOutline="true"
-            android:elevation="4dp"
+            android:elevation="1dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/lab" />
+            android:src="@drawable/labourlogo" />
     </LinearLayout>
 </LinearLayout>
+

@@ -6,15 +6,11 @@
         android:title="@string/my_profile"
         />
 
-    <item
-        android:id="@+id/contact"
-        android:title="@string/contacts"/>
+
     <item
         android:id="@+id/feedback"
         android:title="@string/feedback"/>
-    <item
-    android:id="@+id/about"
-    android:title="@string/about"/>
+
 
     <item
         android:id="@+id/Logout"

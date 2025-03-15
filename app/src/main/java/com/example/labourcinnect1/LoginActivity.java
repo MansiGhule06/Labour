@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this,""+ R.string.please_enter_both_username_and_password, Toast.LENGTH_SHORT).show();
         } else {
             // Here you can add further validation (e.g., checking against a database)
-            Toast.makeText(this,""+ R.string.login_successful, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"login_successful",+Toast.LENGTH_SHORT).show();
             // Proceed with your login logic
         }
         if("labour".equals(userType))

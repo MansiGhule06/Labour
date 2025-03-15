@@ -4,15 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@drawable/background1">
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_margin="25dp"
         android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
         android:id="@+id/aboutus"
-        android:background="@color/brown"
+        android:background="#3100E676"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
@@ -48,13 +47,12 @@
         tools:targetApi="ice_cream_sandwich">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_row="0"
             android:layout_column="0"
             android:layout_gravity="center_horizontal"
             app:cardCornerRadius="250dp"
-            android:background="@drawable/background1"
             app:cardElevation="5dp">
 
 
@@ -64,9 +62,9 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
+                android:paddingTop="30dp"
                 android:layout_row="0"
                 android:layout_column="0"
-
                 android:src="@drawable/email" />
         </androidx.cardview.widget.CardView>
 
@@ -80,8 +78,8 @@
             android:textColor="@color/black"
             android:textSize="18sp" />
         <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_row="1"
             android:layout_column="0"
             android:layout_gravity="center_horizontal"
@@ -111,8 +109,8 @@
             android:textSize="18sp" />
 
         <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_row="2"
             android:layout_column="0"
             android:layout_gravity="center_horizontal"
@@ -129,7 +127,7 @@
                 android:layout_gravity="center"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="phone icon"
-                android:src="@drawable/phone_call_icon"
+                android:src="@drawable/telephone"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"/>
 
@@ -145,8 +143,8 @@
             android:textSize="18sp" />
 
         <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_row="3"
             android:layout_column="0"
             android:layout_gravity="center_horizontal"

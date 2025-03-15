@@ -37,10 +37,10 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText editTextPassword, editTextName, editTextAddress, editTextMobile, editTextAge, editTextWorkType, editTextLocation;
+    private EditText editTextPassword, editTextName, editTextAddress, editTextMobile, editTextAge, editTextLocation;
     private ImageView profileImageView;
     private Button buttonSubmit, uploadPhotoButton, buttonGetLocation, buttonLogin; // Added buttonLogin here
-    private Spinner spinnerState, spinnerCity;
+    private Spinner spinnerState, spinnerCity,spinnerWorkType;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1000;
 
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         editTextAddress = findViewById(R.id.editTextAddress);
         editTextMobile = findViewById(R.id.editTextMobile);
         editTextAge = findViewById(R.id.editTextAge);
-        editTextWorkType = findViewById(R.id.editTextWorkType);
+        spinnerWorkType = findViewById(R.id.spinnerWorkType);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonSubmit = findViewById(R.id.buttonSubmit);
         buttonLogin = findViewById(R.id.buttonLogin); // Initialize the login button
@@ -96,6 +96,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ArrayAdapter<CharSequence> workTypeAdapter = ArrayAdapter.createFromResource(
+                this, R.array.TypeOfWork, android.R.layout.simple_spinner_item);
+        stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerWorkType.setAdapter(workTypeAdapter);
+
+        // Set up the state spinner selection to populate the city spinner dynamically
+        spinnerWorkType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+               // updateCitySpinner(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+                Toast.makeText(MainActivity.this, "Select Type Of Work", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
         // Define the LocationCallback to get updates
         locationCallback = new LocationCallback() {
             @Override
@@ -117,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             String mobile = editTextMobile.getText().toString();
             String ageStr = editTextAge.getText().toString().trim();
             String password = editTextPassword.getText().toString();
-            String workType = editTextWorkType.getText().toString();
+            String workType = spinnerWorkType.getSelectedItem().toString();
             String state = spinnerState.getSelectedItem().toString();
             String city = spinnerCity.getSelectedItem().toString();
             String location = editTextLocation.getText().toString();

@@ -13,8 +13,7 @@
         android:id="@+id/drawerLayout"
         tools:openDrawer="start"
         android:orientation="vertical"
-        android:fitsSystemWindows="true"
-        tools:context=".MainActivity">
+        android:fitsSystemWindows="true">
         <include
             layout="@layout/activity_labour_homepage"/>
 
@@ -25,7 +24,6 @@
             app:menu="@menu/drawer_items"
             android:id="@+id/navigationView"
             app:headerLayout="@layout/drawer_header"
-            android:background="@drawable/background1"
             android:layout_gravity="start"/>
     </androidx.drawerlayout.widget.DrawerLayout>
 </LinearLayout>

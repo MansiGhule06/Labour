@@ -2,12 +2,10 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp"
-    android:backgroundTint="#5D4037"
-    android:background="@drawable/background1">
+    android:background="#429E9D">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -26,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="24dp"
-                android:background="@drawable/background1">
+                android:background="#ffffff">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -57,8 +55,6 @@
                         android:layout_height="wrap_content"
                         android:inputType="text"/>
                 </com.google.android.material.textfield.TextInputLayout>
-
-
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -151,12 +147,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp">
 
-                    <com.google.android.material.button.MaterialButton
+                    <!-- Replaced AppCompatButton with MaterialButton -->
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_submit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/submit_feedback"
-                        app:cornerRadius="8dp"/>
+                        android:background="@drawable/button_square"
+                        android:text="Submit Feedback"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:cornerRadius="8dp" />
 
                     <ProgressBar
                         android:id="@+id/progress_bar"

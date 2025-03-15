@@ -1,56 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:clickable="true"
+android:focusable="true"
+app:cardBackgroundColor="#ffff"
+app:cardElevation="4dp"
+app:cardCornerRadius="12dp"
+
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/background1">
+    android:padding="20dp">
 
-    <!-- Profile Section -->
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/profile1"
+        app:strokeColor="#E0E0E0"
+        app:strokeWidth="1dp"
+        android:contentDescription="Profile Image" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@color/brown">
+        android:layout_gravity="center_horizontal"
+        android:text="John Doe"
+        android:textColor="#C70091EA"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp" />
 
-        <!-- Profile Picture -->
-        <ImageView
-            android:id="@+id/profile_picture"
-            android:layout_width="124.80dp"
-            android:layout_height="124.80dp"
-            android:src="@drawable/profile"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20.80dp"
-            android:background="@drawable/user_image_circle_background"
-            android:clipToOutline="true" />
 
-        <!-- User Name -->
-        <TextView
-            android:id="@+id/user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PMDT"
-            android:textSize="23.40dp"
-            android:textColor="@android:color/white"
-            android:gravity="center_horizontal"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/poppins_bold" />
-
-        <!-- User Email -->
-        <TextView
-            android:id="@+id/user_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="pmdt@gmail.com"
-            android:textSize="@dimen/_10sdp"
-            android:textColor="@android:color/white"
-            android:gravity="center_horizontal"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_marginTop="8dp" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/labourtype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="UserType"
+        android:textStyle="bold"
+        android:textColor="#304FFE"
+        android:textSize="13sp"
+        android:layout_marginTop="6dp" />
+    <TextView
+        android:id="@+id/userEmail"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="john.doe@example.com"
+        android:textColor="#6200EA"
+        android:textSize="13sp"
+        android:layout_marginTop="6dp" />
 
 </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
