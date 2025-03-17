@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -31,6 +32,10 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 import java.util.Locale;
@@ -46,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
     private FusedLocationProviderClient fusedLocationClient;
     private LocationCallback locationCallback;
+    private Uri imageUri;
+    private DatabaseReference databaseReference;
+    private StorageReference storageReference;
+    private static final int STORAGE_PERMISSION_CODE = 101;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -71,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
         buttonGetLocation = findViewById(R.id.buttonGetLocation);
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("LabourCinnect1/Contractors");
+        storageReference = FirebaseStorage.getInstance().getReference("LabourCinnect1/ContractorProfileImages");
 
         // Set OnClickListener for the Upload Photo button
         uploadPhotoButton.setOnClickListener(v -> dispatchTakePictureIntent());
