@@ -2,8 +2,11 @@ package com.example.labourcinnect1;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -46,11 +49,13 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+        Log.d("StorageBucket", "Bucket: " + storageRef.getBucket());
 //        database referec
 
         // Initialize Firebase
-        databaseReference = FirebaseDatabase.getInstance().getReference("LabourConnectApp1/LabourUser");
-        storageReference = FirebaseStorage.getInstance().getReference("LabourConnectApp1/LabourProfileImage");
+        databaseReference = FirebaseDatabase.getInstance().getReference("LabourConnectApp/LabourUser");
+        storageReference = FirebaseStorage.getInstance().getReference("LabourConnectApp/LabourProfileImage");
 
         // Initialize Views
         profileImage = findViewById(R.id.profile_image);
@@ -182,13 +187,29 @@ public class RegistrationActivity extends AppCompatActivity {
             return;
         }
 
+        if (!isNetworkAvailable()) {
+            Toast.makeText(this, "No internet connection", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Log.d("ImageUri", "Image URI: " + imageUri.toString());
         StorageReference imageRef = storageReference.child(mobile + ".jpg");
+        Log.d("StorageRef", "Upload path: " + imageRef.getPath());
 
         imageRef.putFile(imageUri)
                 .addOnSuccessListener(taskSnapshot ->
                         imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
                             Map<String, Object> userData = new HashMap<>();
                             userData.put("profileImageUrl", uri.toString());
+                            userData.put("name", editTextName.getText().toString().trim());
+                            userData.put("age", editTextAge.getText().toString().trim());
+                            userData.put("mobile", mobile);
+                            userData.put("address", editTextAddress.getText().toString().trim());
+                            userData.put("workType", spinnerWorkType.getSelectedItem().toString());
+                            userData.put("state", spinnerStates.getSelectedItem().toString());
+                            userData.put("city", spinnerCity.getSelectedItem().toString());
+                            // Consider hashing password before storing
+                            userData.put("password", editTextPassword.getText().toString().trim());
 
                             databaseReference.child(mobile).setValue(userData)
                                     .addOnSuccessListener(aVoid -> {
@@ -201,8 +222,15 @@ public class RegistrationActivity extends AppCompatActivity {
                                     );
                         })
                 )
-                .addOnFailureListener(e ->
-                        Toast.makeText(this, "Image Upload Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show()
-                );
+                .addOnFailureListener(e -> {
+                    Log.e("UploadError", "Image upload failed", e);
+                    Toast.makeText(this, "Image Upload Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnected();
     }
 }
