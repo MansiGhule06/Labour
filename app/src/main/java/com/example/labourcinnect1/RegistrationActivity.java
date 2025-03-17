@@ -46,6 +46,7 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+//        database referec
 
         // Initialize Firebase
         databaseReference = FirebaseDatabase.getInstance().getReference("LabourConnectApp1/LabourUser");
